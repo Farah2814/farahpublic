@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #calculator {
+            width: 400px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #display-container {
+            background-color: #222;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        #display {
+            width: 100%;
+            padding: 5px;
+            font-size: 24px;
+            background-color: #222;
+            color: white;
+            border: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td {
+            width: 25%;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+            border: 1px solid #555;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+        }
+
+        table td:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div id="display-container">
+            <input type="text" id="display" readonly>
+        </div>
+        <table>
+            <tr>
+                <td onclick="clearDisplay()">C</td>
+                <td onclick="appendToDisplay('7')">7</td>
+                <td onclick="appendToDisplay('8')">8</td>
+                <td onclick="appendToDisplay('9')">9</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('4')">4</td>
+                <td onclick="appendToDisplay('5')">5</td>
+                <td onclick="appendToDisplay('6')">6</td>
+                <td onclick="appendToDisplay('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('1')">1</td>
+                <td onclick="appendToDisplay('2')">2</td>
+                <td onclick="appendToDisplay('3')">3</td>
+                <td onclick="appendToDisplay('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('0')">0</td>
+                <td onclick="appendToDisplay('.')">.</td>
+                <td onclick="calculate()">=</td>
+                <td onclick="appendToDisplay('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('/')">/</td>
+                <td onclick="toggleSign()">+/-</td>
+                <td onclick="calculatePercentage()">%</td>
+                <td onclick="backspace()">⌫</td>
+            </tr>
+            <tr>
+                <td onclick="calculateSquare()">x²</td>
+                <td onclick="calculateSquareRoot()">√x</td>
+                <td onclick="appendToDisplay('**')">^</td>
+                <td onclick="calculateLogarithm()">log</td>
+            </tr>
+            <tr>
+                <td onclick="calculateCube()">x³</td>
+                <td onclick="calculateCubeRoot()">³√x</td>
+                <td onclick="calculateFactorial()">x!</td>
+                <td onclick="appendToDisplay('pi')">π</td>
+            </tr>
+            <tr>
+                <td onclick="calculateSin()">sin</td>
+                <td onclick="calculateCos()">cos</td>
+                <td onclick="calculateTan()">tan</td>
+                <td onclick="appendToDisplay('e')">e</td>
+            </tr>
+        </table>
+    </div>
+    <script src="calculator.js"></script>
+
+</body>
+</html>
